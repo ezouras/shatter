@@ -3,34 +3,95 @@ root:{
   --container-width:1500px;
 }
 body {
-    background-color: #000;
-    margin: 0;
-    overflow: hidden;
+  background-color: #000;
+  margin: 0;
+  overflow: hidden;
 }
 
 canvas {
-    position: absolute;
-    width:var(--container-width);
-    height:var(--container-height);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
 }
 
 img {
-    display: block;
-    cursor: pointer;
-    width:var(--container-width);
-    height:var(--container-height);
+  position:absolute;
+  cursor: pointer;
+
 
 }
 
+
 #container {
     position: absolute;
-    width:var(--container-width);
-    height:var(--container-height);
-    left: 0;
-    top: 0;
+    left:-10vw;
+    top:-10vw;
     margin: auto;
+}
+
+.clickTextContainer{
+
+  cursor: pointer;
+  position: absolute;
+  top:0%;
+  left:50%;
+  transform: translate(-50%,10%);
+}
+
+.clickText{
+  font-family: 'Nosifer', cursive;
+  font-size:3rem;
+  color:red;
+  opacity:0;
+  animation-name:fadeAndShake;
+  animation-delay:4s;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fadeAndShake {
+  0%{
+    opacity:0;
+  }
+  10%{
+    opacity:.5;
+  }
+  20%{
+    opacity:1;
+  }
+  30%{
+    opacity:.5;
+  }
+  40%{
+    opacity:0;
+  }
+
+  50%{
+    opacity:.5;
+
+  }
+  60%{
+    opacity:0;
+
+  }
+  70%{
+    opacity:.5;
+
+  }
+
+  80%{
+    opacity:1;
+
+  }
+  90%{
+    opacity:.5;
+
+  }
+  100%{
+    opacity:0;
+
+  }
+
 }

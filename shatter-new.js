@@ -20,6 +20,7 @@ $(document).ready(function() {
     container.appendChild(image);
     clickPosition=[imageWidth * .5, imageHeight * .5];
     image.addEventListener('click', imageClickHandler);
+    $(".clickTextContainer").click(imageClickHandler);
     loaded=1;
     image.onload = function() {
     if(++loaded===1){
@@ -36,16 +37,20 @@ function imagesLoaded() {
 
 
 function updateImageSize(event){
-  console.log("in update image isze");
-  image.height=$( window ).height();
+  //console.log("in update image isze");
+  /*image.height=$( window ).height();
   image.width=$( window ).width();
   imageHeight= image.height;
   imageWidth= image.width;
   clickPosition=[imageWidth * .5, imageHeight * .5];
+  */
+
 
 
 }
 function imageClickHandler(event) {
+  $(".clickText").css("animation-play-state","paused");
+  $(".clickText").fadeOut(500);
     var box = image.getBoundingClientRect(),
         top = box.top,
         left = box.left;
@@ -72,10 +77,10 @@ function triangulate() {
         centerY = clickPosition[1];
         */
         var rings = [
-                {r:imageWidth/4, c:12},
-                {r:imageWidth/2, c:12},
-                {r:imageWidth, c:12},
-                {r:imageWidth*2, c:12} // very large in case of corner clicks
+                {r:50, c:12},
+                {r:150, c:12},
+                {r:300, c:12},
+                {r:1200, c:12} // very large in case of corner clicks
             ],
             x,
             y,
@@ -155,6 +160,12 @@ function shatterCompleteHandler() {
     fragments.length = 0;
     vertices.length = 0;
     indices.length = 0;
+
+
+    $( ".clickText").css("display","inline")
+
+    $( ".clickText").text("I CAN STILL SEE YOU");
+
 }
 
 //////////////
