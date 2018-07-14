@@ -162,9 +162,13 @@ function shatterCompleteHandler() {
     indices.length = 0;
 
 
-    $( ".clickText").css("display","inline")
+    $( ".iSeeYouContainer").css("display","inline");
+    $('.iSeeYouContainer').append('<style>.iSeeYouContainer::before{animation-play-state:running !important;}</style>');
+    setTimeout(function(){
+      $( ".iSeeYouContainer").fadeOut(2000);
+       },
+      1000);
 
-    $( ".clickText").text("I CAN STILL SEE YOU");
 
 }
 

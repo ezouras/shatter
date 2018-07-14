@@ -47,7 +47,7 @@ img {
   opacity:0;
   animation-name:fadeAndShake;
   animation-delay:4s;
-  animation-duration: .5s;
+  animation-duration: .25s;
   animation-iteration-count: infinite;
 }
 
@@ -94,4 +94,35 @@ img {
 
   }
 
+}
+
+.iSeeYouContainer{
+  display:none;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+.iSeeYou{
+  font-size:2rem;
+  color:red;
+  white-space: nowrap;
+
+
+}
+.iSeeYouContainer::before{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  content:"";
+  background:black;
+  animation: type 3s steps(50) forwards;
+  animation-play-state: paused;
+}
+@keyframes type {
+    from {left: 0; }
+    to   {left: 1100px; }
+  }
 }
