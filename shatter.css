@@ -1,0 +1,36 @@
+root:{
+  --container-height:1500px;
+  --container-width:1500px;
+}
+body {
+    background-color: #000;
+    margin: 0;
+    overflow: hidden;
+}
+
+canvas {
+    position: absolute;
+    width:var(--container-width);
+    height:var(--container-height);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+}
+
+img {
+    display: block;
+    cursor: pointer;
+    width:var(--container-width);
+    height:var(--container-height);
+
+}
+
+#container {
+    position: absolute;
+    width:var(--container-width);
+    height:var(--container-height);
+    left: 0;
+    top: 0;
+    margin: auto;
+}
